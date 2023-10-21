@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
+import { ArtBarChartComponent } from './art-bar-chart/art-bar-chart.component';
 
 @NgModule({
   imports: [
@@ -32,7 +33,8 @@ import { LineChartComponent } from './line-chart/line-chart.component';
   declarations: [
     AppComponent,
     BarChartComponent,
-    LineChartComponent
+    LineChartComponent,
+    ArtBarChartComponent
   ],
   bootstrap: [AppComponent],
 })
