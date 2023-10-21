@@ -7,34 +7,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { RouterModule, Routes } from '@angular/router';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-import { LayoutComponent } from './layout/layout.component';
-import { HomeComponent } from './home/home.component';
-import { MenuItemComponent } from './layout/helper/menu-item/menu-item.component';
-import { MenuHeaderComponent } from './layout/helper/menu-header/menu-header.component';
-
-const routes: Routes = [
-  {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'home',
-  },
-  {
-    path: '',
-    component: LayoutComponent,
-    children: [
-      {
-        path: 'home',
-        component: HomeComponent,
-      },
-    ],
-  },
-];
+import { BarChartComponent } from './bar-chart/bar-chart.component';
+import { LineChartComponent } from './line-chart/line-chart.component';
 
 @NgModule({
   imports: [
@@ -46,19 +25,14 @@ const routes: Routes = [
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    RouterModule.forRoot(routes),
     MatProgressSpinnerModule,
     MatExpansionModule,
     MatMenuModule,
   ],
   declarations: [
     AppComponent,
-    LayoutComponent,
-    MenuItemComponent,
-    MenuHeaderComponent,
-    // PageHeaderComponent,
-    // HomeComponent,
-    // SalesComponent,
+    BarChartComponent,
+    LineChartComponent
   ],
   bootstrap: [AppComponent],
 })
