@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js/auto';
+import { DerpRangeToTotal, DerpService } from '../derp.service';
 
 @Component({
   selector: 'app-bar-chart',
@@ -8,10 +9,10 @@ import Chart from 'chart.js/auto';
 })
 export class BarChartComponent implements OnInit {
 
-  constructor() { }
+  constructor(private derpService: DerpService) { }
 
   ngOnInit(): void {
-    this.createChart();
+    this.createChartV2();
   }
   public chart: any;
 
@@ -36,6 +37,34 @@ export class BarChartComponent implements OnInit {
 									 '0.00', '538', '541'],
             backgroundColor: 'limegreen'
           }  
+        ]
+      },
+      options: {
+        aspectRatio:2.5
+      }
+      
+    });
+  }
+
+  createChartV2() {
+    const derpData: DerpRangeToTotal[] = this.derpService.getDerpData();
+    this.chart = new Chart("MyBarChart2", {
+      type: 'bar', //this denotes tha type of chart
+
+      data: {// values on X-Axis
+        labels: ['<10', '10-20', '20-30', '30-40','40>'], 
+	       datasets: [
+          {
+            label: "Charges Total",
+            data: [
+              derpData[0].totalCharges, 
+              derpData[1].totalCharges,
+              derpData[2].totalCharges,
+              derpData[3].totalCharges,
+              derpData[4].totalCharges,
+            ],
+            backgroundColor: 'blue'
+          }
         ]
       },
       options: {
