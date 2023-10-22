@@ -3,6 +3,7 @@
 [Edit in Codeflow ⚡️](https://stackblitz.com/~/github.com/jeremycastillo/derp)
 
 ## to run locally
+- follow instructions [here](https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows)
 - go to windows nvm install [link](https://github.com/coreybutler/nvm-windows/releases)
 - once nvm installed open powershell
   - to verify installation run:
@@ -13,4 +14,4 @@
 - to build app and run:
   - 'npm i' or 'npm install'
   - 'npm run start'
-- should look like [derp-run](images/derp-install-run-app.PNG)
+- should look like ![derp-run](images/derp-install-run-app.PNG)
